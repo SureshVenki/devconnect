@@ -23,4 +23,5 @@
             stream.close();
             response.close();
          End Try  
+         ' Ends the method.
   End sub
