@@ -2,7 +2,7 @@
 
 function CallAPI($TOKEN){
 
-    //Initializes the URL and the method type...
+    //Initializes the URL and the method type.
     $url = ${endpoint};
     $method = ${method};
 
