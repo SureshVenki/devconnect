@@ -2,8 +2,8 @@
 
 function CallAPI($TOKEN){
 
-    $url = {$endpoint};
-    $method = {$method};
+    $url = ${endpoint};
+    $method = ${method};
 
     // Data: array("param" => "value") ==> index.php?param=value
     $data = NULL; 
