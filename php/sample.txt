@@ -1,0 +1,51 @@
+<?php
+
+function CallAPI(){
+
+    $url = {$endpoint};
+    $method = {$method}
+
+    // Data: array("param" => "value") ==> index.php?param=value
+    $data = NULL; 
+
+    //setup the request
+    $ch = curl_init();
+
+    switch ($method){
+        case "POST":
+            curl_setopt($curl, CURLOPT_POST, 1);
+
+            if ($data)
+                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+            break;
+        case "PUT":
+            curl_setopt($curl, CURLOPT_PUT, 1);
+            break;
+        default:
+            if ($data)
+                $url = sprintf("%s?%s", $url, http_build_query($data));
+    }
+    // Returns the data/output as a string instead of raw data
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    //Set the URL - CURLOPT_URL
+    curl_setopt($curl, CURLOPT_URL, $url);
+
+    //Set your auth headers
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json',
+        'Authorization: Bearer ' . $TOKEN
+        ));
+
+    // get stringified data/output. See CURLOPT_RETURNTRANSFER
+    $data = curl_exec($ch);
+
+    // get info about the request
+    $info = curl_getinfo($ch);
+
+    // close curl resource to free up system resources 
+    curl_close($ch);
+
+    return $data;
+}
+?>  
