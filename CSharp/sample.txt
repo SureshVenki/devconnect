@@ -17,6 +17,8 @@ namespace SampleCode.System.Net
             //Request authentication
             httpRequest.PreAuthenticate = true;
             httpRequest.Headers.Add("Authorization", "Bearer " + AccessToken);
+            //Request method
+            httpRequest.Method = ${method};
             //Request content type
             httpRequest.Accept = "application/json";
             // Get the response.  
