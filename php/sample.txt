@@ -3,8 +3,8 @@
 function CallAPI($TOKEN){
 
     //Initializes the URL and the method type.
-    $url = ${endpoint};
-    $method = ${method};
+    $url = '${endpoint}';
+    $method = '${method}';
 
     // Data: array("param" => "value") ==> index.php?param=value
     $data = NULL; 
