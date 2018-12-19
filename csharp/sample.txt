@@ -9,7 +9,7 @@ namespace SampleCode.System.Net
     {  
         public static void callAPI(String accessToken)  
         {  
-            Uri url = new Uri(${endpoint})
+            Uri url = new Uri("${endpoint}")
              // Create a request for the URL.   
             WebRequest request = WebRequest.Create(url);  
             // If required by the server, set the credentials.  
@@ -18,7 +18,7 @@ namespace SampleCode.System.Net
             httpRequest.PreAuthenticate = true;
             httpRequest.Headers.Add("Authorization", "Bearer " + AccessToken);
             //Request method
-            httpRequest.Method = ${method};
+            httpRequest.Method = "${method}";
             //Request content type
             httpRequest.Accept = "application/json";
             // Get the response.  
